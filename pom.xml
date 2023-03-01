@@ -84,13 +84,13 @@
 	<distributionManagement>
     <repository>
         <id>central</id>
-        <name>demo</name>
-        <url>https://apat3.jfrog.io/artifactory/demo/</url>
+        <name>web-app-book</name>
+        <url>https://apat3.jfrog.io/artifactory/web-app-book/</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>demo</name>
-        <url>https://apat3.jfrog.io/artifactory/demo/</url>
+        <name>web-app-book</name>
+        <url>https://apat3.jfrog.io/artifactory/web-app-book/</url>
     </snapshotRepository>
 </distributionManagement>
 </project>
