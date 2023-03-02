@@ -19,3 +19,10 @@ spec:
         image: aaarpitaaa/apacheimage1:latest
         ports:
         - containerPort: 9090
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        
