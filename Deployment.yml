@@ -20,9 +20,17 @@ spec:
         ports:
         - containerPort: 9090
         readinessProbe:
-          httpGet:
-            path: /
-            port: 80
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
           initialDelaySeconds: 5
-          periodSeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 5
+          periodSeconds: 5
         
