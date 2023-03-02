@@ -10,7 +10,7 @@ spec:
     image: apacheimage1:latest
     command: ['sh', '-c', 'echo The app is running! && sleep 3600']
   initContainers:
-  - name: init-myservice
+  - name: init-eks-service
     image: apacheimage1:lastest
     command: ['sh', '-c', "until nslookup myservice.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
   - name: init-mydb
