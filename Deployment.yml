@@ -19,6 +19,10 @@ spec:
         image: aaarpitaaa/apacheimage1:latest
         ports:
         - containerPort: 9090
+      initContainers:
+      - name: init-eks-service
+        image: busybox:1.28
+        command: ['sh', '-c', "until nslookup eks-service.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
         readinessProbe:
           exec:
             command:
