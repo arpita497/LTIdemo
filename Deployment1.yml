@@ -23,4 +23,4 @@ spec:
       initContainers:
       - name: init-eks-service
         image: aaarpitaaa/apacheimage1:latest
-        command: ['sh', '-c', "until nslookup eks-service.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
+        command: ['sh', '-c', "touch hello.txt"]
