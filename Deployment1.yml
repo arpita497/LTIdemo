@@ -36,12 +36,12 @@ spec:
       - name: init-eks-service
         image: aaarpitaaa/apacheimage1:latest
         command: ['sh', '-c', "touch /usr/local/tomcat/hello.txt"]
-      - name: sidecar-eks-service
-        image: aaarpitaaa/apacheimage1:latest
-        command: ["sh","-c","while true; "touch /usr/local/tomcat/hello.txt"; sleep 30; done"]
-        volumeMounts:
-          - name: shared-logs
-            mountPath: /var/log/
-      volumes:
-      - name: shared-logs
-        emptyDir: {}
+#      - name: sidecar-eks-service
+#        image: aaarpitaaa/apacheimage1:latest
+#        command: ["sh","-c","while true; "touch /usr/local/tomcat/hello.txt"; sleep 30; done"]
+#        volumeMounts:
+#          - name: shared-logs
+#            mountPath: /var/log/
+#      volumes:
+#      - name: shared-logs
+#        emptyDir: {}
