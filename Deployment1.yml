@@ -23,4 +23,4 @@ spec:
       initContainers:
       - name: init-eks-service
         image: aaarpitaaa/apacheimage1:latest
-        command: ['sh', '-c', "touch hello.txt"]
+        command: ['sh', '-c', "touch /usr/local/tomcat/hello.txt"]
