@@ -19,6 +19,12 @@ spec:
         image: aaarpitaaa/apacheimage1:latest
         ports:
         - containerPort: 9090
+        readinessProbe:
+          httpGet:
+            path: /onlinebookstore/index.html
+            port: 9090
+          initialDelaySeconds: 15
+          periodSeconds: 10
 # init-container
       initContainers:
       - name: init-eks-service
