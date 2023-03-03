@@ -19,3 +19,8 @@ spec:
         image: aaarpitaaa/apacheimage1:latest
         ports:
         - containerPort: 9090
+# init-container
+    initContainers:
+      - name: init-eks-service
+        image: aaarpitaaa/apacheimage1:latest
+        command: ["/bin/bash","-c","echo Init Done - Welcome to Onlinebookstore > /book"]
