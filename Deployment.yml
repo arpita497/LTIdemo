@@ -30,18 +30,10 @@ spec:
 #        image: aaarpitaaa/apacheimage1:latest
 #        command: ['sh', '-c', "until nslookup eks-service.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
 # HealthProbes (readinessProbe, livenessProbe)
-        readinessProbe:
-          exec:
-            command:
-            - cat
-            - /tmp/healthy
-          initialDelaySeconds: 5
-          periodSeconds: 5
         livenessProbe:
-          exec:
-            command:
-            - cat
-            - /tmp/healthy
+          httpGet:
+            path: /index.html
+            port: 9090
           initialDelaySeconds: 5
           periodSeconds: 5
         
