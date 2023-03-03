@@ -32,8 +32,8 @@ spec:
 # HealthProbes (readinessProbe, livenessProbe)
         livenessProbe:
           httpGet:
-            path: /index.html
-            port: 9090
+            path: /
+            port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
         
