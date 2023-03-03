@@ -17,23 +17,5 @@ spec:
       containers:
       - name: tomcat
         image: aaarpitaaa/apacheimage1:latest
-        args:
-        - /bin/sh
-        - -c
-        - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600
         ports:
         - containerPort: 9090
-  
-# init-container
-#      initContainers:
-#      - name: init-eks-service
-#        image: aaarpitaaa/apacheimage1:latest
-#        command: ['sh', '-c', "until nslookup eks-service.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
-# HealthProbes (readinessProbe, livenessProbe)
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        
