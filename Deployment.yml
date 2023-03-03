@@ -19,16 +19,7 @@ spec:
         image: aaarpitaaa/apacheimage1:latest
         ports:
         - containerPort: 9090
-# Sidecar-container
-      - name: sidecar-container
-        image: aaarpitaaa/apacheimage1:latest
-        command: ["sh","-c","while true; do cat /var/log/nginx/access.log; sleep 30; done"]
-      volumeMounts:
-        - name: shared-logs
-          mountPath: /var/log/nginx
-  volumes:
-    - name: shared-logs
-      emptyDir: {}
+  
 # init-container
       initContainers:
       - name: init-eks-service
