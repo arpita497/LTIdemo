@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 9090
 # init-container
-    initContainers:
+      initContainers:
       - name: init-eks-service
         image: aaarpitaaa/apacheimage1:latest
-        command: ["/bin/bash","-c","echo Init Done - Welcome to Onlinebookstore > /book"]
+        command: command: ['sh', '-c', "until nslookup eks-service.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
